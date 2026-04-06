@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Password Generator</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:50px;
+}
+
+input{
+padding:10px;
+font-size:16px;
+width:80px;
+}
+
+button{
+padding:10px 20px;
+margin-top:20px;
+cursor:pointer;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+background:#1e293b;
+padding:10px;
+display:inline-block;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Password Generator</h1>
+
+<p>Password Length</p>
+
+<input id="length" type="number" value="8">
+
+<br>
+
+<button onclick="generate()">Generate Password</button>
+
+<div id="result"></div>
+
+<script>
+
+function generate(){
+
+let length=document.getElementById("length").value;
+
+let chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
+
+let password="";
+
+for(let i=0;i<length;i++){
+
+password+=chars.charAt(Math.floor(Math.random()*chars.length));
+
+}
+
+document.getElementById("result").innerText=password;
+
+}
+
+</script>
+
+</body>
+
+</html>
